@@ -1,0 +1,19 @@
+:root {
+  --white: #ffffff;
+  --main-bg-gradient: linear-gradient(var(--white) 40%, gray);
+  --peach: #ff826e;
+  --success: #69d6f4;
+  --warning: #e3c165;
+  --danger: #f70e0e;
+  --edit: #0bab64;
+  --biscuit: #f0d0b4;
+  --golden: #fcd770;
+  --orange: #c75719;
+  --deep-blue: #0b0b43;
+  --font-xs: 12px;
+  --font-s: 14px;
+  --font-sm: 18px;
+  --font-m: 20px;
+  --font-l: 28px;
+  --font-xl: 32px;
+}

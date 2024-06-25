@@ -2,70 +2,105 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Budget App</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-      }
-      .container {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-      }
-      .box {
-        border: 1px solid #000;
-        padding: 20px;
-        margin: 10px;
-        width: 300px;
-      }
-      .header {
-        text-align: center;
-      }
-      .total {
-        text-align: center;
-        margin-top: 20px;
-      }
-      .item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 5px 0;
-      }
-      .item button {
-        margin-left: 5px;
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Budget Planner</title>
   </head>
   <body>
-    <div class="header">
-      <img src="logo.png" alt="Logo" style="width: 100px" />
-      <h1 id="balanceMessage">
-        You can still spend PLN <span id="remaining">987</span>
-      </h1>
-    </div>
-    <div class="container">
-      <div class="box">
-        <h2>INCOME</h2>
-        <input type="text" id="incomeName" placeholder="Income name" />
-        <input type="number" id="incomeAmount" placeholder="Amount" />
-        <button onclick="addIncome()">Add</button>
-        <div id="incomeList"></div>
-        <div class="total">
-          Total income: <span id="totalIncome">5500</span> PLN
+    <main class="container">
+      <header>
+        <h1 class="text--center">Home Budget</h1>
+        <div class="app__logo"><img src="./budget.png" alt="Logo" /></div>
+        <div id="balanceMessage" class="budget__state budget__state--success">
+          <p class="text--center">
+            You can still spend <span id="remaining">987</span> PLN
+          </p>
         </div>
-      </div>
-      <div class="box">
-        <h2>EXPENSES</h2>
-        <input type="text" id="expenseName" placeholder="Expense name" />
-        <input type="number" id="expenseAmount" placeholder="Amount" />
-        <button onclick="addExpense()">Add</button>
-        <div id="expenseList"></div>
-        <div class="total">
-          Total expenses: <span id="totalExpense">4513</span> PLN
+      </header>
+      <section class="flex flex--space-between budget__list__wrapper">
+        <div class="budget__incomes">
+          <h2 class="budget__list__header incomes__header">Incomes</h2>
+          <form
+            id="incomeForm"
+            class="budget__list__form"
+            onsubmit="addIncome(); return false;"
+          >
+            <input
+              type="text"
+              id="incomeName"
+              class="budget__list__form__input budget__list__form__input--text"
+              placeholder="Income Name"
+            />
+            <input
+              type="number"
+              id="incomeAmount"
+              class="budget__list__form__input budget__list__form__input--number"
+              placeholder="Amount"
+            />
+            <input
+              type="submit"
+              value="Add"
+              class="budget__list__form__input__button"
+            />
+          </form>
+          <ul id="incomeList" class="budget__list">
+            <!-- Income items will be dynamically added here -->
+          </ul>
+          <p class="budget__list__summary">
+            Total Incomes: <span id="totalIncome">0</span> PLN
+          </p>
         </div>
-      </div>
-    </div>
+        <div class="budget__expenses">
+          <h2 class="budget__list__header expenses__header">Expenses</h2>
+          <form
+            id="expenseForm"
+            class="budget__list__form"
+            onsubmit="addExpense(); return false;"
+          >
+            <input
+              type="text"
+              id="expenseName"
+              class="budget__list__form__input budget__list__form__input--text"
+              placeholder="Expense Name"
+            />
+            <input
+              type="number"
+              id="expenseAmount"
+              class="budget__list__form__input budget__list__form__input--number"
+              placeholder="Amount"
+            />
+            <input
+              type="submit"
+              value="Add"
+              class="budget__list__form__input__button"
+            />
+          </form>
+          <ul id="expenseList" class="budget__list">
+            <!-- Expense items will be dynamically added here -->
+          </ul>
+          <p class="budget__list__summary">
+            Total Expenses: <span id="totalExpense">0</span> PLN
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a
+        class="icon__credentials"
+        href="https://www.flaticon.com/free-icons/accounting"
+        title="accounting icons"
+        >Accounting icons created by Eucalyp - Flaticon</a
+      >
+    </footer>
+
     <script src="index.js"></script>
   </body>
 </html>
