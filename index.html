@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .box {
+        border: 1px solid #000;
+        padding: 20px;
+        margin: 10px;
+        width: 300px;
+      }
+      .header {
+        text-align: center;
+      }
+      .total {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5px 0;
+      }
+      .item button {
+        margin-left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img src="logo.png" alt="Logo" style="width: 100px" />
+      <h1 id="balanceMessage">
+        You can still spend PLN <span id="remaining">987</span>
+      </h1>
+    </div>
+    <div class="container">
+      <div class="box">
+        <h2>INCOME</h2>
+        <input type="text" id="incomeName" placeholder="Income name" />
+        <input type="number" id="incomeAmount" placeholder="Amount" />
+        <button onclick="addIncome()">Add</button>
+        <div id="incomeList"></div>
+        <div class="total">
+          Total income: <span id="totalIncome">5500</span> PLN
+        </div>
+      </div>
+      <div class="box">
+        <h2>EXPENSES</h2>
+        <input type="text" id="expenseName" placeholder="Expense name" />
+        <input type="number" id="expenseAmount" placeholder="Amount" />
+        <button onclick="addExpense()">Add</button>
+        <div id="expenseList"></div>
+        <div class="total">
+          Total expenses: <span id="totalExpense">4513</span> PLN
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
