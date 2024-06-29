@@ -21,27 +21,26 @@
         <div class="app__logo"><img src="./budget.png" alt="Logo" /></div>
         <div id="balanceMessage" class="budget__state budget__state--success">
           <p class="text--center">
-            You can still spend <span id="remaining">987</span> PLN
+            You can still spend <span id="remaining">0</span> PLN
           </p>
         </div>
       </header>
       <section class="flex flex--space-between budget__list__wrapper">
         <div class="budget__incomes">
           <h2 class="budget__list__header incomes__header">Incomes</h2>
-          <form
-            id="incomeForm"
-            class="budget__list__form"
-            onsubmit="addIncome(); return false;"
-          >
+          <form id="incomeForm" class="budget__list__form">
             <input
               type="text"
               id="incomeName"
+              name="incomeName"
               class="budget__list__form__input budget__list__form__input--text"
               placeholder="Income Name"
             />
             <input
               type="number"
               id="incomeAmount"
+              name="incomeAmount"
+              step="0.01"
               class="budget__list__form__input budget__list__form__input--number"
               placeholder="Amount"
             />
@@ -60,20 +59,19 @@
         </div>
         <div class="budget__expenses">
           <h2 class="budget__list__header expenses__header">Expenses</h2>
-          <form
-            id="expenseForm"
-            class="budget__list__form"
-            onsubmit="addExpense(); return false;"
-          >
+          <form id="expenseForm" class="budget__list__form">
             <input
               type="text"
               id="expenseName"
+              name="expenseName"
               class="budget__list__form__input budget__list__form__input--text"
               placeholder="Expense Name"
             />
             <input
               type="number"
               id="expenseAmount"
+              name="expenseAmount"
+              step="0.01"
               class="budget__list__form__input budget__list__form__input--number"
               placeholder="Amount"
             />

@@ -134,6 +134,34 @@ h2 {
   font-weight: 700;
 }
 
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.item::before {
+  content: "•";
+  margin-right: 10px;
+  color: var(--deep-blue);
+}
+
+.item button {
+  padding: 5px 10px;
+  margin-left: 5px;
+  border: none;
+  color: var(--white);
+  font-size: var(--font-sm);
+  cursor: pointer;
+}
+
+.item button.edit {
+  background-color: var(--edit);
+}
+
+.item button.delete {
+  background-color: var(--danger);
+}
+
 @media screen and (min-width: 1024px) {
   .container {
     width: 960px;
@@ -148,40 +176,6 @@ h2 {
     margin-top: 0;
   }
 }
-
-/* A SAMPLE STYLING OF BUDGET LIST ITEM
-
-.budget__list__item{
-    flex-direction: column;
-    padding: 2px 0;
-    border: 1px solid var(--white);
-    background-color: var(--biscuit);
-}
-
-.budget__list__item__button{
-    padding: 3px 15px;
-    margin: 2px;
-    border: none;
-    color: var(--white);
-    font-size: var(--font-s);
-    font-weight: 700;
-    line-height: 18px;
-}
-
-.budget__list__item__button--edit{
-    background-color: var(--edit);
-}
-
-.budget__list__item__button--delete{
-    background-color: var(--danger);
-}
-
-@media screen and (min-width: 1024px){
-    .budget__list__item{
-        flex-direction: row;
-        align-items: center;
-    }
-} */
 
 footer {
   display: flex;
