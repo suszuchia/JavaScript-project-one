@@ -199,7 +199,8 @@ document.addEventListener("DOMContentLoaded", () => {
         item.amount = newAmount;
         renderList(
           type === "income" ? incomes : expenses,
-          type === "income" ? "incomeList" : "expenseList"
+          type === "income" ? "incomeList" : "expenseList",
+          type
         );
         updateTotals();
         closeEditModal();
